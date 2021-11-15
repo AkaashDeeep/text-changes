@@ -20,7 +20,7 @@ let TextBox = (props) => {
 	let permission = (event) => {
 		setText(event.target.value);
 	};
-	let backcolor = props.theme === 'dark'?'grey':'white';
+	let backcolor = props.theme === 'dark'?'#ffe564':'white';
 	return(
 		<>
 			<div className = {`textContainer`}>
@@ -30,7 +30,7 @@ let TextBox = (props) => {
 					<textarea className="adjtextArea " type="text" value ={text} id ="boxText" onChange ={permission} style={{backgroundColor:backcolor}}>
 					</textarea>
 					<br/><br/>
-					<button type ="button" className="btn" onClick ={textCaseup} >{props.btnTitle}</button>
+					<button disabled ={text.length===0} type ="button" className="btn" onClick ={textCaseup} >{props.btnTitle}</button>
 					<button type ="button" className="btn" onClick = {textCaselo}>{props.btnTitle2}</button>
 					<button type ="button" className="btn" onClick = {textCasecopy}>{props.btnTitle3}</button>
 					<br/><br/>
@@ -38,9 +38,9 @@ let TextBox = (props) => {
 					<br/>
 					<p>{text}</p>
 					<br/>
-					<p>Number Of Words :{text.split(" ").length}</p> 
+					<p>Number Of Words :{text.split(" ").filter((element)=>{return element.length!==0}).length}</p> 
 					<p>Number Of Character :{text.length}</p> 
-					<p>Read Time :{0.008 * text.split(" ").length} Min</p>
+					<p>Read Time :{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Min</p>
 				</div>
 			</div>
 		</>
