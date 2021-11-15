@@ -43,7 +43,6 @@ let Test = () => {
             <Route exact path="/Service" element={<Service theme = {mode} title = "Service Page"/>} />
             <Route exact path="/About" element={<About theme = {mode} title = "About Page"/>} />
             <Route exact path="/Contact" element={<Contact theme = {mode} title = "Contact Page"/>} />
-            // <Route exact path="*" element={<Notfound theme = {mode} title = "Page Not Found"/>} />
           </Routes>
       </BrowserRouter>
     </>
