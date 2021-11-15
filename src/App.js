@@ -5,7 +5,7 @@ import Portfolio from './components/Portfolio';
 import Service from './components/Service';
 import About from './components/About';
 import Contact from './components/Contact';
-import Notfound from './components/Notfound';
+// import Notfound from './components/Notfound';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 let Test = () => {
@@ -39,11 +39,11 @@ let Test = () => {
           <Routes>
             <Route exact path="/" element={<Textbox title = "Please Drop Your Text" btnTitle="Convert In Uppercase" 
             btnTitle2="Convert In Lowercase" btnTitle3="Copy Your Text" theme = {mode}/>}/>
-            <Route path="portfolio" element={<Portfolio theme = {mode} title = "Portfolio Page"/>} />
-            <Route path="Service" element={<Service theme = {mode} title = "Service Page"/>} />
-            <Route path="About" element={<About theme = {mode} title = "About Page"/>} />
-            <Route path="Contact" element={<Contact theme = {mode} title = "Contact Page"/>} />
-            <Route path="*" element={<Notfound theme = {mode} title = "Page Not Found"/>} />
+            <Route exact path="/portfolio" element={<Portfolio theme = {mode} title = "Portfolio Page"/>} />
+            <Route exact path="/Service" element={<Service theme = {mode} title = "Service Page"/>} />
+            <Route exact path="/About" element={<About theme = {mode} title = "About Page"/>} />
+            <Route exact path="/Contact" element={<Contact theme = {mode} title = "Contact Page"/>} />
+            // <Route exact path="*" element={<Notfound theme = {mode} title = "Page Not Found"/>} />
           </Routes>
       </BrowserRouter>
     </>
